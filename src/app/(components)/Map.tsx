@@ -42,14 +42,14 @@ export default function Map({ location, aedInfo }: Props) {
     const { kakao } = window;
     const imageSrc =
       "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
-    const positions = aedInfo.map((info) => {
+    const positions = aedInfo?.map((info) => {
       const { org, wgs84Lat, wgs84Lon } = info;
       return {
         title: org,
         latlng: new kakao.maps.LatLng(wgs84Lat, wgs84Lon),
       };
     });
-    positions.forEach((position) => {
+    positions?.forEach((position) => {
       const imageSize = new kakao.maps.Size(24, 35);
       const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
       const markers = new kakao.maps.Marker({

@@ -5,7 +5,7 @@ const nextConfig = {
       {
         source: "/:path*",
         destination:
-          "http://apis.data.go.kr/B552657/AEDInfoInqireService:path*",
+          "http://apis.data.go.kr/B552657/AEDInfoInqireService/:path*",
       },
     ];
   },
