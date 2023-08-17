@@ -1,34 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# iNeedYourHeartBeat
 
-## Getting Started
+사용자의 위치를 기반으로 가장 가까운 자가 제세동기의 위치를 알려주는 서비스입니다.
 
-First, run the development server:
+## 사용 기술 스택
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+<img src="https://img.shields.io/badge/nextJs-000000?style=for-the-badge&logo=nextdotjs&logoColor=white"> <img src="https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"> <img src="https://img.shields.io/badge/axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white"> <img src="https://img.shields.io/badge/eslint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white"> <img src="https://img.shields.io/badge/prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=black">
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 주요 기능
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 1. 사용자 위치 정보 받아오기
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<img width="700" alt="Screenshot 2023-06-24 at 10 59 30 AM" src="https://github.com/Majesty-jun/iNeedYourHeartBeat/assets/83108580/9049f2a1-9f73-480e-8747-7a531daaaf3d">
 
-## Learn More
+Navigator API를 사용하여 사용자의 위치 정보를 위도, 경도 단위로 받아올 수 있도록 구현하였습니다.
 
-To learn more about Next.js, take a look at the following resources:
+### 2. 공공데이터포털 OpenAPI 데이터 받아오기
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<img width="715" alt="Screenshot 2023-06-24 at 10 53 48 AM" src="https://github.com/Majesty-jun/iNeedYourHeartBeat/assets/83108580/e75de8d8-74be-4b86-b2b6-9c7c29217b9b">
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+[국립중앙의료원](https://www.data.go.kr/data/15000652/openapi.do)에서 제공하는 데이터를 사용자의 위도, 경도 정보를 기반으로 받아오도록 구현하였습니다.
 
-## Deploy on Vercel
+### 3. 카카오맵 API를 통한 지도 로드
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+카카오에서 제공하는 카카오맵 API를 통해 지도를 로드하고,  
+받아온 사용자의 위치정보를 기반으로 지도의 중심을 움직이고,  
+자가 제세동기의 위치를 기반으로 지도에 마크를 표시할 수 있도록 구현하였습니다.
